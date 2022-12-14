@@ -4,7 +4,7 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import EvilIcons from '@expo/vector-icons/EvilIcons';
 
 
-export default function Login() {
+export default function Login({navigation}) {
 
 const [fontsLoaded] = useFonts({
   'sofia': require('../assets/fonts/Sofia-Regular.ttf'),
@@ -29,7 +29,7 @@ const [fontsLoaded] = useFonts({
     </Text>
 
    <View style={styles.btn_view}>
-   <TouchableOpacity style={styles.btn}>
+   <TouchableOpacity style={styles.btn} onPress={()=> navigation.navigate('Home')}>
    <FontAwesome name='google' size={30} color="white" style={styles.googleLogo} />
     <Text style={styles.btn_text}> Login using your AU account</Text>
     
