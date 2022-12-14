@@ -1,4 +1,5 @@
 import { ImageBackground, StyleSheet, Text, TouchableOpacity, View, Image} from 'react-native';
+import Card from '../components/card';
 import { useFonts } from 'expo-font';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import EvilIcons from '@expo/vector-icons/EvilIcons';
@@ -13,6 +14,11 @@ export default function Home({navigation}) {
    <View style={styles.topBar}>
     <Image source={require('../assets/image/logo.png')} style={styles.logo}/>
 
+   </View>
+
+   <View>
+
+    <Card />
    </View>
     </View>
 
