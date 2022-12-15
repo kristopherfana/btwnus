@@ -27,25 +27,70 @@ export default function Card({navigation}) {
             <View style={styles.interactionbar}>
                 <View style={styles.interactionContent}>
                 <TouchableOpacity>
-                <FontAwesome name='heart' size={18} style={{marginRight:8}}/>
+                <FontAwesome name='thumbs-o-up' size={18} style={{marginRight:8}}/>
                 </TouchableOpacity>
                 <Text>122K</Text>
                 </View>
 
                 <View style={styles.interactionContent}>
-                <FontAwesome name='comment' size={18} style={{marginRight:8}}/>
+                <FontAwesome name='commenting-o' size={18} style={{marginRight:8}}/>
                 <Text>122K</Text>
                 </View>
 
+                <View style={[styles.interactionContent, {flex:1,flexDirection:'row-reverse', alignContent:'flex-end',  }]}>
+                <TouchableOpacity style={{flexDirection:'row',}}>
+                <FontAwesome name='bookmark-o' size={18} style={{marginRight:8,}}/>
+                </TouchableOpacity>    
+                </View>
+            </View>
+
+            <View style={styles.textContet}> 
+                    <Text style={styles.textContetText}>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.
+                    </Text>
+                </View>
+    </View>
+
+    <View style={styles.card}>
+            <View style={styles.cardHead}>
+                <Image source={require('../assets/image/profile.jpg')} style={styles.crd_user_image} />
+                <View style={styles.crd_top_info}>
+                    <Text style={styles.crd_user_name}>Rubinaldo Domingos</Text>
+                    <Text style={styles.crd_time}>12hrs ago</Text>
+                </View>
+            </View>
+
+            <View style={styles.pst_img}>
+                <Image style={styles.image} source={require('../assets/image/profile.jpg')}  />
+            </View>
+
+            <View style={styles.interactionbar}>
                 <View style={styles.interactionContent}>
                 <TouchableOpacity>
-                <FontAwesome name='save' size={18} style={{marginRight:8}}/>
+                <FontAwesome name='thumbs-o-up' size={18} style={{marginRight:8}}/>
                 </TouchableOpacity>
                 <Text>122K</Text>
                 </View>
-                
+
+                <View style={styles.interactionContent}>
+                <FontAwesome name='commenting-o' size={18} style={{marginRight:8}}/>
+                <Text>122K</Text>
+                </View>
+
+                <View style={[styles.interactionContent, {flex:1,flexDirection:'row-reverse', alignContent:'flex-end',  }]}>
+                <TouchableOpacity style={{flexDirection:'row',}}>
+                <FontAwesome name='bookmark-o' size={18} style={{marginRight:8,}}/>
+                </TouchableOpacity>    
+                </View>
             </View>
+
+            <View style={styles.textContet}> 
+                    <Text style={styles.textContetText}>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.
+                    </Text>
+                </View>
     </View>
+
 
    </View>
  
@@ -61,10 +106,10 @@ export default function Card({navigation}) {
 const styles = StyleSheet.create({
 card:{
   
-    height:60,
+    height:undefined,
 },
 cardHead:{
-   padding:20,
+   padding:10,
     flexDirection:'row',
     
 
@@ -83,7 +128,7 @@ justifyContent:'center',
 padding:10,
 },
 crd_time:{
-    fontWeight:'bold'
+    fontSize:10,
 },
 pst_img:{
 
@@ -97,11 +142,22 @@ image:{
 },
 interactionbar:{
     padding:20,
-    flexDirection:'row'
+    flexDirection:'row',
+    alignItems:'center',
 },
 interactionContent:{
     flexDirection:'row',
     marginRight:25,
 
+},
+bookmark:{
+    
+},
+textContet:{
+    paddingLeft:18,
+    paddingRight:18,
+},
+textContetText:{
+    textAlign:'left'
 }
 });

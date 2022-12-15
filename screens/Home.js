@@ -1,4 +1,4 @@
-import { ImageBackground, StyleSheet, Text, TouchableOpacity, View, Image} from 'react-native';
+import { ImageBackground, StyleSheet, Text, TouchableOpacity, View, Image,FlatList} from 'react-native';
 import Card from '../components/card';
 import { useFonts } from 'expo-font';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
@@ -7,7 +7,9 @@ import EvilIcons from '@expo/vector-icons/EvilIcons';
 
 export default function Home({navigation}) {
 
-
+  const renderItem = ({ item }) => (
+    <Card />
+  );
   return (
 
     <View style={styles.container}>
@@ -17,8 +19,12 @@ export default function Home({navigation}) {
    </View>
 
    <View>
-
-    <Card />
+   <FlatList
+        data={Card}
+        renderItem={renderItem}
+        style={{height:undefined,marginBottom:90}}
+      />
+    
    </View>
     </View>
 
