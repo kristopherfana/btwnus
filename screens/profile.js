@@ -1,15 +1,15 @@
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { View } from 'react-native';
+import { View ,Text} from 'react-native';
 
 
 const Stack = createNativeStackNavigator();
 
 export default function Profile() {
   return (
-   <View>
+   <View style={{justifyContent:'center', alignContent:'center',alignItems:'center', flexDirection:'column'}}>
     
-    <Text>This is the profile</Text>
+    <Text style={{justifyContent:'center', textAlign:'center',}}>This is the profile</Text>
      </View>
   );
 }

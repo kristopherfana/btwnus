@@ -3,6 +3,7 @@ import Card from '../components/card';
 import { useFonts } from 'expo-font';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import EvilIcons from '@expo/vector-icons/EvilIcons';
+import Profile from './profile';
 
 
 export default function Home({navigation}) {
@@ -16,6 +17,16 @@ export default function Home({navigation}) {
    <View style={styles.topBar}>
     <Image source={require('../assets/image/logo.png')} style={styles.logo}/>
 
+   </View>
+
+
+{/*  temporary  profile btn  */}
+   <View >
+   <TouchableOpacity onPress={()=> navigation.navigate('Profile')}>
+   
+    <Text style={styles.btn_text}> Profile</Text>
+    
+   </TouchableOpacity>
    </View>
 
    <View>
