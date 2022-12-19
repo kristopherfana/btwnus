@@ -1,10 +1,53 @@
 import { ImageBackground, StyleSheet, Text, TouchableOpacity, View, Image} from 'react-native';
 import { useFonts } from 'expo-font';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import EvilIcons from '@expo/vector-icons/EvilIcons';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import auth from '@react-native-firebase/auth';
+import React, { useState, useEffect } from 'react';
 
 
 export default function Login({navigation}) {
+
+   // Set an initializing state whilst Firebase connects
+   const [initializing, setInitializing] = useState(true);
+   const [user, setUser] = useState();
+
+  GoogleSignin.configure({
+    webClientId: '26710633092-ob2cltuvkfmcjbvttildfm8khrqk1d6u.apps.googleusercontent.com',
+  });
+
+   // Handle user state changes
+   function onAuthStateChanged(user) {
+    setUser(user);
+    if (initializing) setInitializing(false);
+  }
+
+  useEffect(() => {
+    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+    return subscriber; // unsubscribe on unmount
+  }, []);
+
+
+  async function onGoogleButtonPress() {
+    // Check if your device supports Google Play
+    await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
+    // Get the users ID token
+    const { idToken } = await GoogleSignin.signIn();
+  
+    // Create a Google credential with the token
+    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+  
+    // Sign-in the user with the credential
+    const user_sign_in = auth().signInWithCredential(googleCredential);
+    user_sign_in.then((user) =>{
+      console.log(user);
+    })
+    .catch((error) =>{
+      console.log(error);
+    })
+  }
+
+  if (initializing) return null;
 
 const [fontsLoaded] = useFonts({
   'sofia': require('../assets/fonts/Sofia-Regular.ttf'),
