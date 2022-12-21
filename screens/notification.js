@@ -4,11 +4,11 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { StyleSheet } from 'react-native';
 
 
-export default function Profile() {
+export default function Notification() {
   return (
    <SafeAreaView>
       <View style={styles.container}>
-        <Text>This is Profile screen</Text>
+        <Text>This is Notifications screen</Text>
       </View>
    </SafeAreaView>
   );

@@ -4,11 +4,11 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { StyleSheet } from 'react-native';
 
 
-export default function Profile() {
+export default function Search() {
   return (
    <SafeAreaView>
       <View style={styles.container}>
-        <Text>This is Profile screen</Text>
+        <Text>This is Search screen</Text>
       </View>
    </SafeAreaView>
   );
