@@ -15,6 +15,7 @@ import { useFonts } from "expo-font";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import EvilIcons from "@expo/vector-icons/EvilIcons";
 import { NavigationContainer } from "@react-navigation/native";
+import Profile from './profile';
 
 export default function Home({ navigation }) {
   const renderItem = ({ item }) => <Card />;
@@ -27,14 +28,30 @@ export default function Home({ navigation }) {
         />
       </View>
 
-      <View>
-        <FlatList
-          data={Card}
-          renderItem={renderItem}
-          style={{ height: undefined }}
-        />
-      </View>
-    </SafeAreaView>
+
+{/*  temporary  profile btn  */}
+   <View >
+   <TouchableOpacity onPress={()=> navigation.navigate('Profile')}>
+   
+    <Text style={styles.btn_text}> Profile</Text>
+    
+   </TouchableOpacity>
+   </View>
+
+   <View>
+   <FlatList
+        data={Card}
+        renderItem={renderItem}
+        style={{height:undefined,marginBottom:90}}
+      />
+    
+   </View>
+    </View>
+
+    
+   
+  
+    
   );
 }
 
