@@ -29,17 +29,24 @@ export default function Home({ navigation }) {
       </View>
 
       {/*  temporary  profile btn  */}
-      <View>
+      {/* <View>
         <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
           <Text style={styles.btn_text}> Profile</Text>
         </TouchableOpacity>
-      </View>
+      </View> */}
 
       <View>
         <FlatList
           data={Card}
           renderItem={renderItem}
-          style={{ height: undefined, marginBottom: 90 }}
+          style={{ height: undefined }}
+        />
+      </View>
+      <View>
+        <FlatList
+          data={Card}
+          renderItem={renderItem}
+          style={{ height: undefined }}
         />
       </View>
     </SafeAreaView>

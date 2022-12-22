@@ -5,7 +5,7 @@ import { StyleSheet } from "react-native";
 export default function Profile() {
   return (
     <SafeAreaView>
-      <View style={styles.container}>
+      <View>
         <Text>This is Profile screen</Text>
       </View>
     </SafeAreaView>

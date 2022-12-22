@@ -12,18 +12,6 @@ import {
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { useState } from "react";
 
-import {
-  ImageBackground,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-  Image,
-} from "react-native";
-import { useFonts } from "expo-font";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
-import EvilIcons from "@expo/vector-icons/EvilIcons";
-
 export default function Card({ navigation }) {
   const [modalOpen, setModalopen] = useState(false);
 
@@ -81,15 +69,6 @@ export default function Card({ navigation }) {
               <Text>122K</Text>
             </TouchableOpacity>
           </View>
-          <View style={styles.interactionContent}>
-            <FontAwesome
-              name="commenting-o"
-              size={18}
-              style={{ marginRight: 8 }}
-            />
-            <Text>122K</Text>
-          </View>
-
           <View
             style={[
               styles.interactionContent,
